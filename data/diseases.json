@@ -1,0 +1,145 @@
+{
+  "diseases": [
+    {
+      "category": "skin",
+      "diseases": [
+        {
+          "id": "skin001",
+          "name": "Actinic Keratosis",
+          "description": "A precancerous scaly patch found on sun-damaged skin",
+          "symptoms": ["Rough, scaly patches", "Red or brown coloration", "Itching or burning"],
+          "severity_levels": ["Mild", "Moderate", "Severe"]
+        },
+        {
+          "id": "skin002",
+          "name": "Basal Cell Carcinoma",
+          "description": "The most common form of skin cancer",
+          "symptoms": ["Pearly or waxy bump", "Flat, flesh-colored lesion", "Brown scar-like lesion"],
+          "severity_levels": ["Mild", "Moderate", "Severe"]
+        },
+        {
+          "id": "skin003",
+          "name": "Dermatofibroma",
+          "description": "A common benign skin growth",
+          "symptoms": ["Small, firm bump", "Reddish-brown color", "Dimple when pinched"],
+          "severity_levels": ["Mild"]
+        },
+        {
+          "id": "skin004",
+          "name": "Melanoma",
+          "description": "The most serious type of skin cancer",
+          "symptoms": ["Asymmetric shape", "Irregular borders", "Varied colors", "Large diameter"],
+          "severity_levels": ["Moderate", "Severe"]
+        },
+        {
+          "id": "skin005",
+          "name": "Nevus",
+          "description": "A common mole or birthmark",
+          "symptoms": ["Brown, tan, or black spot", "Round or oval shape", "Flat or raised"],
+          "severity_levels": ["Mild"]
+        },
+        {
+          "id": "skin006",
+          "name": "Pigmented Benign Keratosis",
+          "description": "A harmless skin growth with pigmentation",
+          "symptoms": ["Brown or black spots", "Waxy texture", "Raised appearance"],
+          "severity_levels": ["Mild"]
+        },
+        {
+          "id": "skin007",
+          "name": "Seborrheic Keratosis",
+          "description": "A noncancerous skin growth",
+          "symptoms": ["Waxy, scaly appearance", "Brown or black color", "Raised surface"],
+          "severity_levels": ["Mild"]
+        },
+        {
+          "id": "skin008",
+          "name": "Squamous Cell Carcinoma",
+          "description": "A common form of skin cancer",
+          "symptoms": ["Firm red nodule", "Flat lesion with scaly crust", "Sore that doesn't heal"],
+          "severity_levels": ["Moderate", "Severe"]
+        },
+        {
+          "id": "skin009",
+          "name": "Vascular Lesion",
+          "description": "Abnormal blood vessel growth",
+          "symptoms": ["Red or purple coloration", "Raised or flat appearance", "May bleed"],
+          "severity_levels": ["Mild", "Moderate"]
+        },
+        {
+          "id": "skin010",
+          "name": "normal",
+          "description": "No abnormal skin condition detected",
+          "symptoms": [],
+          "severity_levels": ["None"]
+        }
+      ]
+    },
+    {
+      "category": "dental",
+      "diseases": [
+        {
+          "id": "dental001",
+          "name": "Gum Swelling",
+          "description": "Inflammation of the gums",
+          "symptoms": ["Swollen gums", "Redness", "Tenderness", "Pain"],
+          "severity_levels": ["Mild", "Moderate", "Severe"]
+        },
+        {
+          "id": "dental002",
+          "name": "Bleeding Gums",
+          "description": "Gums that bleed easily, often a sign of gum disease",
+          "symptoms": ["Bleeding during brushing", "Red or swollen gums", "Bad breath"],
+          "severity_levels": ["Mild", "Moderate", "Severe"]
+        },
+        {
+          "id": "dental003",
+          "name": "Pus Discharge",
+          "description": "Infection causing pus discharge from gums",
+          "symptoms": ["Pus discharge", "Swelling", "Pain", "Bad taste in mouth"],
+          "severity_levels": ["Moderate", "Severe"]
+        },
+        {
+          "id": "dental004",
+          "name": "normal",
+          "description": "No dental abnormalities detected",
+          "symptoms": [],
+          "severity_levels": ["None"]
+        }
+      ]
+    },
+    {
+      "category": "chest",
+      "diseases": [
+        {
+          "id": "chest001",
+          "name": "PNEUMONIA",
+          "description": "Infection that inflames air sacs in one or both lungs",
+          "symptoms": ["Cough", "Fever", "Shortness of breath", "Chest pain", "Fatigue", "Sweating", "Chills"],
+          "severity_levels": ["Moderate", "Severe"]
+        },
+        {
+          "id": "chest002",
+          "name": "normal",
+          "description": "No chest abnormalities detected",
+          "symptoms": [],
+          "severity_levels": ["None"]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "last_updated": "2024-12-26",
+    "description": "Disease dataset for skin, dental, and chest disease detection",
+    "disclaimer": "This data is for educational purposes only and should not be used for actual medical diagnosis or treatment. Always consult healthcare professionals for medical concerns.",
+    "data_source": "Synthetic data generated for demonstration",
+    "total_categories": 3,
+    "categories": [
+      "skin",
+      "dental",
+      "chest"
+    ],
+    "total_diseases": 16
+  }
+}

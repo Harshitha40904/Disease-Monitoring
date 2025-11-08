@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infectious Disease Monitor</title>
+    <meta name="description" content="AI-powered infectious disease monitoring through photo analysis and medical report processing">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-virus-slash"></i>
+                <span>Disease Monitor</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#upload" class="nav-link">Upload</a></li>
+                <li><a href="#analysis" class="nav-link">Analysis</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">AI-Powered Infectious Disease Monitoring</h1>
+                <p class="hero-subtitle">Upload photos and medical reports for instant analysis and disease classification</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('upload')">
+                        <i class="fas fa-upload"></i> Start Analysis
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-microscope fa-8x"></i>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section id="upload" class="upload-section">
+            <div class="container">
+                <h2 class="section-title">Upload & Analyze</h2>
+                <div class="upload-grid">
+                    <!-- Photo Upload -->
+                    <div class="upload-card">
+                        <div class="upload-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Photo Analysis</h3>
+                        <p>Upload photos of symptoms or conditions for AI-powered analysis</p>
+                        <div class="upload-area" id="photoUpload">
+                            <input type="file" id="photoInput" accept="image/*" multiple>
+                            <div class="upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload photos</p>
+                                <span>or drag and drop</span>
+                            </div>
+                            <div id="photoPreview" class="file-preview"></div>
+                        </div>
+                        <button class="btn btn-primary" onclick="analyzePhotos()">
+                            <i class="fas fa-search"></i> Analyze Photos
+                        </button>
+                    </div>
+
+                    <!-- Medical Report Upload -->
+                    <div class="upload-card">
+                        <div class="upload-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3>Medical Reports</h3>
+                        <p>Upload medical reports for comprehensive disease analysis</p>
+                        <div class="upload-area" id="reportUpload">
+                            <input type="file" id="reportInput" accept=".pdf,.doc,.docx,.txt">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload reports</p>
+                                <span>PDF, DOC, or TXT</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="analyzeReports()">
+                            <i class="fas fa-search"></i> Analyze Reports
+                        </button>
+                    </div>
+
+        <!-- Analysis Results -->
+        <section id="analysis" class="analysis-section">
+            <div class="container">
+                <h2 class="section-title">Analysis Results</h2>
+                <div class="results-container">
+                    <div class="results-tabs">
+                        <button class="tab-btn active" data-tab="diseases">Disease Classification</button>
+                        <button class="tab-btn" data-tab="symptoms">Symptom Analysis</button>
+                        <button class="tab-btn" data-tab="confidence">Confidence Scores</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="diseases">
+                        <div class="results-grid" id="diseaseResults">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="symptoms">
+                        <div class="symptoms-list" id="symptomResults">
+                            <!-- Symptoms will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="confidence">
+                        <div class="confidence-chart" id="confidenceChart">
+                            <!-- Confidence chart will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="container">
+                <h2 class="section-title">Disease Trends Dashboard</h2>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Disease Distribution</h3>
+                        <canvas id="diseaseChart"></canvas>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Trend Analysis</h3>
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Geographic Spread</h3>
+                        <div id="mapContainer">
+                            <p>Map visualization coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About This Project</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Privacy-First Disease Monitoring</h3>
+                        <p>This application processes all data locally in your browser, ensuring your medical information never leaves your device. We use advanced AI models to analyze photos and medical reports for educational and research purposes.</p>
+                        
+                        <h3>How It Works</h3>
+                        <ul>
+                            <li><strong>Photo Analysis:</strong> Upload images of symptoms for AI-powered classification</li>
+                            <li><strong>Report Processing:</strong> Analyze medical reports for disease patterns</li>
+                            <li><strong>Local Processing:</strong> All analysis happens on your device</li>
+                            <li><strong>Secure Storage:</strong> Data encrypted and stored locally</li>
+                        </ul>
+                        
+                        <h3>Data Sources</h3>
+                        <p>We use synthetic data and properly licensed public datasets to train our models. No real patient data is used in training or analysis.</p>
+                    </div>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Privacy Protected</h4>
+                            <p>HIPAA-compliant design with client-side processing</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>AI Powered</h4>
+                            <p>Advanced machine learning for accurate analysis</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Real-time Insights</h4>
+                            <p>Instant analysis and trend visualization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Disease Monitor</h4>
+                    <p>AI-powered infectious disease monitoring for research and education.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Important Notice</h4>
+                    <p>This tool is for educational purposes only. Always consult healthcare professionals for medical concerns.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>For research collaboration or questions about this project.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Disease Monitor. Educational use only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
